@@ -4,4 +4,6 @@ class Light {
   static Color text = Colors.black;
 }
 
-class Dark {}
+class Dark {
+  //
+}
