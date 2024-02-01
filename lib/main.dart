@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_with_flutter/screen/signup/signup.dart';
+import 'package:trivia_with_flutter/screen/entry/entry_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,6 +15,6 @@ class MainApp extends StatelessWidget {
         // theme: ThemeData.dark().copyWith(
         //   scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
         // ),
-        home: const SignupPage());
+        home: const EntryPage());
   }
 }
