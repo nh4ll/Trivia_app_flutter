@@ -10,7 +10,7 @@ class SignupPage extends StatelessWidget {
     return Scaffold(
 
       body: SizedBox(
-        width: double.infinity,
+        width: screenSize.width,
         height: screenSize.height,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -24,6 +24,7 @@ class SignupPage extends StatelessWidget {
               style: TextStyle(
                   fontFamily: "Lato",
                   color: Light.text,
+                  // color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 37),
             ),

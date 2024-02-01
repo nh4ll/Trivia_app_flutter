@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Light {
-  static Color text = Colors.white;
+  static Color text = Colors.black;
 }
 
 class Dark {}
