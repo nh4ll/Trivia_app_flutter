@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:trivia_with_flutter/screen/signup/signup_screen.dart';
 import 'package:trivia_with_flutter/utils/colours/colors.dart';
+import 'package:trivia_with_flutter/utils/providers/theme/themeprovider.dart';
 
+import '../../main.dart';
 import '../../utils/strings/strings.dart';
 
 class EntryPage extends StatefulWidget {
@@ -58,12 +62,14 @@ class _EntryPageState extends State<EntryPage> {
                     padding: const EdgeInsets.only(top: 4.5, left: 4.5),
                     child: Container(
                       margin: EdgeInsets.only(top: screenSize.height * .04),
-                      height: screenSize.height * .06,
+                      height: screenSize.height * .075,
                       width: screenSize.width * .95,
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                              isLightTheme ? Light.text : Dark.text),
+                              isLightTheme
+                                  ? Light.buttonLowerLayer
+                                  : Dark.buttonLowerLayer),
                         ),
                         onPressed: () {},
                         child: const Text(''),
@@ -72,14 +78,20 @@ class _EntryPageState extends State<EntryPage> {
                   ),
                   Container(
                     margin: EdgeInsets.only(top: screenSize.height * .04),
-                    height: screenSize.height * .06,
+                    height: screenSize.height * .075,
                     width: screenSize.width * .95,
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            isLightTheme ? Light.button1 : Dark.button1),
+                            isLightTheme ? Light.buttonUpperLayer : Dark.buttonUpperLayer),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          // isLightTheme != isLightTheme;
+                          context.read<ThemeProvider>().changeTheme();
+                          print("IsLightTheme is :$isLightTheme");
+                        });
+                      },
                       child: Text(
                         Entry.haveAcc,
                         style: TextStyle(
@@ -89,41 +101,59 @@ class _EntryPageState extends State<EntryPage> {
                   ),
                 ],
               ),
-              Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 4.5, left: 4.5),
-                    child: Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const SignupPage(),
+                    ),
+                  );
+                  print("object");
+                },
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4.5, left: 4.5),
+                      child: Container(
+                        margin: EdgeInsets.only(top: screenSize.height * .04),
+                        height: screenSize.height * .075,
+                        width: screenSize.width * .95,
+                        child: ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  isLightTheme
+                                      ? Dark.buttonLowerLayer
+                                      : Light.buttonLowerLayer),
+                            ),
+                            onPressed: () {},
+                            child: const Text('')),
+                      ),
+                    ),
+                    Container(
                       margin: EdgeInsets.only(top: screenSize.height * .04),
-                      height: screenSize.height * .06,
+                      height: screenSize.height * .075,
                       width: screenSize.width * .95,
                       child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                isLightTheme ? Light.text : Dark.text),
-                          ),
-                          onPressed: () {},
-                          child: const Text('')),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: screenSize.height * .04),
-                    height: screenSize.height * .06,
-                    width: screenSize.width * .95,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            isLightTheme ? Light.button1 : Dark.button1),
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        Entry.getStarted,
-                        style: TextStyle(
-                            color: isLightTheme ? Light.text : Dark.text),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              isLightTheme ? Dark.buttonUpperLayer : Light.buttonUpperLayer),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const SignupPage(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          Entry.getStarted,
+                          style: TextStyle(
+                              color: isLightTheme ? Dark.text : Light.text),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
 
               SizedBox(
