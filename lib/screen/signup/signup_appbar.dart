@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:trivia_with_flutter/main.dart';
 import 'package:trivia_with_flutter/utils/colours/colors.dart';
+import 'package:trivia_with_flutter/utils/providers/theme/themeprovider.dart';
 
 AppBar buildAppBar(BuildContext context) {
   var screenSize = MediaQuery.of(context).size;
@@ -18,5 +20,12 @@ AppBar buildAppBar(BuildContext context) {
         Navigator.of(context).pop();
       },
     ),
+    // actions: [
+    //   IconButton(
+    //       onPressed: () {
+    //         context.read<ThemeProvider>().changeTheme();
+    //       },
+    //       icon: Icon(isLightTheme ? Icons.sunny : Icons.mode_night_outlined)),
+    // ],
   );
 }

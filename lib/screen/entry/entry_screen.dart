@@ -21,6 +21,7 @@ class _EntryPageState extends State<EntryPage> {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: isLightTheme ? Light.background : Dark.background,
+      resizeToAvoidBottomInset: false,
       body: SizedBox(
         width: screenSize.width,
         height: screenSize.height,

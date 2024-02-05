@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trivia_with_flutter/screen/entry/entry_screen.dart';
-import 'package:trivia_with_flutter/screen/signup/signup_screen.dart';
 import 'package:trivia_with_flutter/utils/providers/theme/themeprovider.dart';
 
 void main() {

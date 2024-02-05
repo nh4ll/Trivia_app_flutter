@@ -1,36 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_with_flutter/screen/login/login_screen.dart';
+import 'package:trivia_with_flutter/screen/home/home_page.dart';
+import 'package:trivia_with_flutter/screen/login/otp_screen.dart';
 
 import '../../main.dart';
 import '../../utils/colours/colors.dart';
 import '../../utils/strings/strings.dart';
-import 'signup_appbar.dart';
+import '../signup/signup_appbar.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
+class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
 
   final FocusNode focusNodeEmail = FocusNode();
   final FocusNode focusNodePassword = FocusNode();
-  final FocusNode focusNodeConfirmPassword = FocusNode();
-  final TextEditingController controllerUsername = TextEditingController();
+  final FocusNode rememberMe = FocusNode();
   final TextEditingController controllerEmail = TextEditingController();
   final TextEditingController controllerPassword = TextEditingController();
   // final TextEditingController controllerConFirmPassword = TextEditingController();
   bool obscurePassword = true;
+  bool rememeberMe = false;
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: buildAppBar(context),
       backgroundColor: isLightTheme ? Light.background : Dark.background,
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       body: Form(
         key: _formKey,
         child: SizedBox(
@@ -47,7 +48,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 // Text In First Page
                 Text(
-                  Signup.h1,
+                  Login.h1,
                   style: TextStyle(
                       fontFamily: "Lato",
                       color: isLightTheme ? Light.text : Dark.text,
@@ -58,69 +59,61 @@ class _SignupPageState extends State<SignupPage> {
                 SizedBox(
                   height: screenSize.height * .01,
                 ),
-                Text(
-                  Signup.h2,
-                  style: TextStyle(
-                      fontFamily: "Lato",
-                      color: isLightTheme ? Light.text : Dark.text,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 21),
-                ),
                 SizedBox(
                   height: screenSize.height * .03,
                 ),
-                TextFormField(
-                  controller: controllerUsername,
-                  keyboardType: TextInputType.name,
-                  onChanged: (value) {
-                    setState(() {
-                      // password = value;
-                      _formKey.currentState?.validate();
-                    });
-                  },
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    color: isLightTheme ? Light.text : Dark.text,
-                  ),
-                  decoration: InputDecoration(
-                    labelText: "Username",
-                    labelStyle: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: isLightTheme ? Light.text : Dark.text,
-                    ),
-                    prefixIcon: Icon(Icons.person_outline,
-                        color: isLightTheme ? Light.icons : Dark.icons),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: isLightTheme ? Light.text : Dark.text,
-                      ),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: isLightTheme ? Light.text : Dark.text,
-                      ),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    // focusedBorder: OutlineInputBorder(
-                    //   borderSide: BorderSide(
-                    //     color:
-                    //         isLightTheme ? Light.text : Dark.text,
-                    //   ),
-                    //   borderRadius: BorderRadius.circular(30),
-                    // ),
-                  ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
-                      return "Please enter username.";
-                      // } else if (_boxAccounts.containsKey(value)) {
-                      //   return "Username is already registered.";
-                    }
+                // TextFormField(
+                //   controller: controllerUsername,
+                //   keyboardType: TextInputType.name,
+                //   onChanged: (value) {
+                //     setState(() {
+                //       // password = value;
+                //       _formKey.currentState?.validate();
+                //     });
+                //   },
+                //   style: TextStyle(
+                //     fontFamily: 'Inter',
+                //     color: isLightTheme ? Light.text : Dark.text,
+                //   ),
+                //   decoration: InputDecoration(
+                //     labelText: "Username",
+                //     labelStyle: TextStyle(
+                //       fontWeight: FontWeight.w500,
+                //       color: isLightTheme ? Light.text : Dark.text,
+                //     ),
+                //     prefixIcon: Icon(Icons.person_outline,
+                //         color: isLightTheme ? Light.icons : Dark.icons),
+                //     border: OutlineInputBorder(
+                //       borderSide: BorderSide(
+                //         color: isLightTheme ? Light.text : Dark.text,
+                //       ),
+                //       borderRadius: BorderRadius.circular(30),
+                //     ),
+                //     enabledBorder: OutlineInputBorder(
+                //       borderSide: BorderSide(
+                //         color: isLightTheme ? Light.text : Dark.text,
+                //       ),
+                //       borderRadius: BorderRadius.circular(30),
+                //     ),
+                //     // focusedBorder: OutlineInputBorder(
+                //     //   borderSide: BorderSide(
+                //     //     color:
+                //     //         isLightTheme ? Light.text : Dark.text,
+                //     //   ),
+                //     //   borderRadius: BorderRadius.circular(30),
+                //     // ),
+                //   ),
+                //   validator: (String? value) {
+                //     if (value == null || value.isEmpty) {
+                //       return "Please enter username.";
+                //       // } else if (_boxAccounts.containsKey(value)) {
+                //       //   return "Username is already registered.";
+                //     }
 
-                    return null;
-                  },
-                  onEditingComplete: () => focusNodeEmail.requestFocus(),
-                ),
+                //     return null;
+                //   },
+                //   onEditingComplete: () => focusNodeEmail.requestFocus(),
+                // ),
                 SizedBox(
                   height: screenSize.height * .01,
                 ),
@@ -227,84 +220,70 @@ class _SignupPageState extends State<SignupPage> {
                     }
                     return null;
                   },
-                  onEditingComplete: () =>
-                      focusNodeConfirmPassword.requestFocus(),
+                  // onEditingComplete: () =>
+                  //     focusNodePassword.requestFocus(),
                 ),
+                // SizedBox(
+                //   height: screenSize.height * .025,
+                // ),
+                // // const Spacer(),
+                // Divider(
+                //   color: isLightTheme ? Light.text : Dark.text,
+                //   indent: 10,
+                //   endIndent: 10,
+                // ),
                 SizedBox(
-                  height: screenSize.height * .025,
+                  height: screenSize.height * .015,
                 ),
-                // const Spacer(),
-                Divider(
-                  color: isLightTheme ? Light.text : Dark.text,
-                  indent: 10,
-                  endIndent: 10,
+                // Text(
+                //   Login.anotherOption,
+                //   style: TextStyle(
+                //       fontSize: 20,
+                //       color: isLightTheme ? Light.text : Dark.text),
+                // ),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: rememeberMe,
+                      focusNode: rememberMe,
+                      onChanged: (v) {
+                        setState(() {
+                          rememeberMe = v!;
+                        });
+                      },
+                    ),
+                    GestureDetector(
+                      child:  Text(
+                        Login.rememberMe,
+                        style: TextStyle(fontSize: 18,
+                        color: isLightTheme ? Light.text : Dark.text
+                        ),
+                      ),
+                      onTap: () {
+                        setState(() {
+                          rememeberMe = !rememeberMe;
+                        });
+                      },
+                    )
+                  ],
                 ),
                 SizedBox(
                   height: screenSize.height * .015,
                 ),
+
                 Center(
-                  child: Text(Signup.anotherOption,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: isLightTheme ? Light.text : Dark.text)),
-                ),
-                SizedBox(
-                  height: screenSize.height * .025,
-                ),
-                // I Have already an account/Create Account Button
-                Stack(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 4.5, left: 4.5),
-                      child: SizedBox(
-                        // margin: EdgeInsets.only(top: screenSize.height * .04),
-                        height: screenSize.height * .075,
-                        width: screenSize.width * .95,
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                isLightTheme
-                                    ? Light.buttonLowerLayer
-                                    : Dark.buttonLowerLayer),
-                          ),
-                          onPressed: () {},
-                          child: const Text(''),
+                  child: GestureDetector(
+                    onTap: () {
+                      //! Temp Navigation to next page
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
                         ),
-                      ),
-                    ),
-                    SizedBox(
-                      // margin: EdgeInsets.only(top: screenSize.height * .04),
-                      height: screenSize.height * .075,
-                      width: screenSize.width * .95,
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              isLightTheme
-                                  ? Light.buttonUpperLayer
-                                  : Dark.buttonUpperLayer),
-                        ),
-                        onPressed: () {
-                          //! Temp using to navigate to next page
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const LoginPage(),
-                            ),
-                          );
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset("assets/Google.png"),
-                            Text(
-                              Signup.continueWithGoogle,
-                              style: TextStyle(
-                                  color: isLightTheme ? Light.text : Dark.text),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
+                      );
+                    },
+                    child: Text(Login.forgotPass,
+                        style: TextStyle(fontSize: 16, color: Light.urlBlue)),
+                  ),
                 ),
                 const Spacer(),
                 Stack(
@@ -344,7 +323,7 @@ class _SignupPageState extends State<SignupPage> {
                             //   _controllerUsername.text,
                             //   _controllerConFirmPassword.text,
                             // );
-                            // context.read<SignupEXProvider>().createAccWithEmailPass(
+                            // context.read<LoginEXProvider>().createAccWithEmailPass(
                             //       _controllerUsername.text,
                             //       _controllerPassword.text,
                             //     );
@@ -359,7 +338,7 @@ class _SignupPageState extends State<SignupPage> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 behavior: SnackBarBehavior.floating,
-                                content: const Text("Registered Successfully"),
+                                content: const Text("SignIn Successfully"),
                               ),
                             );
 
@@ -369,7 +348,7 @@ class _SignupPageState extends State<SignupPage> {
                           }
                         },
                         child: Text(
-                          Signup.createAccount,
+                          Login.createAccount,
                           style: TextStyle(
                               color: isLightTheme ? Dark.text : Light.text),
                         ),
@@ -395,8 +374,6 @@ class _SignupPageState extends State<SignupPage> {
   void dispose() {
     focusNodeEmail.dispose();
     focusNodePassword.dispose();
-    focusNodeConfirmPassword.dispose();
-    controllerUsername.dispose();
     controllerEmail.dispose();
     controllerPassword.dispose();
     super.dispose();
