@@ -30,7 +30,9 @@ class _OtpScreenState extends State<OtpScreen> {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: buildAppBar(context),
-      backgroundColor: isLightTheme ? Light.background : Dark.background,
+      backgroundColor: context.read<ThemeProvider>().isLightTheme
+          ? Light.background
+          : Dark.background,
       resizeToAvoidBottomInset: false,
       body: Form(
         key: _formKey,
@@ -51,7 +53,9 @@ class _OtpScreenState extends State<OtpScreen> {
                   Otp.h1,
                   style: TextStyle(
                       fontFamily: "Lato",
-                      color: isLightTheme ? Light.text : Dark.text,
+                      color: context.read<ThemeProvider>().isLightTheme
+                          ? Light.text
+                          : Dark.text,
                       // color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 37),
@@ -60,7 +64,9 @@ class _OtpScreenState extends State<OtpScreen> {
                   Otp.h2,
                   style: TextStyle(
                       fontFamily: "Lato",
-                      color: isLightTheme ? Light.text : Dark.text,
+                      color: context.read<ThemeProvider>().isLightTheme
+                          ? Light.text
+                          : Dark.text,
                       fontWeight: FontWeight.bold,
                       fontSize: 18),
                 ),
@@ -71,9 +77,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   height: screenSize.height * .03,
                 ),
                 //*  Otp Code Input Fields
-                Row(children: [
-                  
-                ]),
+                Row(children: []),
                 // Container(
                 //   alignment: Alignment.centerRight,
                 //   child: Obx(() => Visibility(
@@ -97,7 +101,6 @@ class _OtpScreenState extends State<OtpScreen> {
                 // ),
                 // ),
 
-
                 SizedBox(
                   height: screenSize.height * .015,
                 ),
@@ -107,13 +110,18 @@ class _OtpScreenState extends State<OtpScreen> {
                     Checkbox(
                       value: rememeberMe,
                       focusNode: rememberMe,
-                      activeColor:
-                          isLightTheme ? Dark.background : Light.background,
-                      hoverColor:
-                          isLightTheme ? Dark.background : Light.background,
-                      focusColor:
-                          isLightTheme ? Dark.background : Light.background,
-                      checkColor: isLightTheme ? Dark.text : Light.text,
+                      activeColor: context.read<ThemeProvider>().isLightTheme
+                          ? Dark.background
+                          : Light.background,
+                      hoverColor: context.read<ThemeProvider>().isLightTheme
+                          ? Dark.background
+                          : Light.background,
+                      focusColor: context.read<ThemeProvider>().isLightTheme
+                          ? Dark.background
+                          : Light.background,
+                      checkColor: context.read<ThemeProvider>().isLightTheme
+                          ? Dark.text
+                          : Light.text,
                       onChanged: (v) {
                         setState(() {
                           rememeberMe = v!;
@@ -124,7 +132,9 @@ class _OtpScreenState extends State<OtpScreen> {
                       child: Text(Login.rememberMe,
                           style: TextStyle(
                               fontSize: 18,
-                              color: isLightTheme ? Light.text : Dark.text)),
+                              color: context.read<ThemeProvider>().isLightTheme
+                                  ? Light.text
+                                  : Dark.text)),
                       onTap: () {
                         setState(() {
                           rememeberMe = !rememeberMe;
@@ -160,7 +170,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
                 //   });
                 // },
-                // icon: Icon(isLightTheme
+                // icon: Icon(context.read<ThemeProvider>().isLightTheme
                 //     ? Icons.sunny
                 //     : Icons.mode_night_outlined),
                 //     ),
@@ -176,7 +186,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
-                                isLightTheme
+                                context.read<ThemeProvider>().isLightTheme
                                     ? Light.buttonLowerLayer
                                     : Dark.buttonLowerLayer),
                           ),
@@ -192,7 +202,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                              isLightTheme
+                              context.read<ThemeProvider>().isLightTheme
                                   ? Dark.buttonUpperLayer
                                   : Light.buttonUpperLayer),
                         ),
@@ -229,7 +239,9 @@ class _OtpScreenState extends State<OtpScreen> {
                         child: Text(
                           Login.createAccount,
                           style: TextStyle(
-                              color: isLightTheme ? Dark.text : Light.text),
+                              color: context.read<ThemeProvider>().isLightTheme
+                                  ? Dark.text
+                                  : Light.text),
                         ),
                       ),
                     ),
