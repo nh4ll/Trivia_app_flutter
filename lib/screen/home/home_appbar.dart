@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:trivia_with_flutter/main.dart';
 import 'package:trivia_with_flutter/utils/colours/colors.dart';
 import 'package:trivia_with_flutter/utils/providers/theme/themeprovider.dart';
 
-AppBar buildAppBar(BuildContext context) {
+AppBar buildHomeAppBar(BuildContext context) {
   var screenSize = MediaQuery.of(context).size;
   var themeProvider =context.read<ThemeProvider>();
   return AppBar(
@@ -14,17 +13,14 @@ AppBar buildAppBar(BuildContext context) {
     elevation: 0.0,
     titleSpacing: 12.0,
     toolbarHeight: screenSize.height * .08,
-    leading: IconButton(
-      icon: Icon(
-        Icons.arrow_back,
-        color:themeProvider.isLightTheme
-            ? Light.icons
-            : Dark.icons,
-      ),
-      onPressed: () {
-        Navigator.of(context).pop();
-      },
+    leading: Center(
+      child: Text("QuizCraft",style: TextStyle(
+        color: themeProvider.isLightTheme?Light.text: Dark.text,
+        fontWeight: FontWeight.bold ,fontFamily:"Poppins",
+        fontSize: 30,
+      ),),
     ),
+    leadingWidth: screenSize.width * 0.35,
     actions: [
       IconButton(
           onPressed: () {
