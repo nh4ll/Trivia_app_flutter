@@ -29,7 +29,7 @@ class Profile extends StatelessWidget {
               width: 80,
               height: 80,
               decoration: BoxDecoration(
-                color: Colors.yellowAccent,
+                color: Colors.blueGrey,
                 borderRadius: BorderRadius.circular(50)
               ),
             ),
@@ -51,65 +51,87 @@ class Profile extends StatelessWidget {
               ),
             ],
           ),
-          Padding(padding: EdgeInsets.only(top:270,left: 20),
-              child: TextButton(onPressed: (){}, child: Text('Quizer',
-              style: TextStyle(
-                color: Colors.black45,
-                fontWeight: FontWeight.bold,
-              ),))
+          Padding(padding: EdgeInsets.only(top:275,left: 10),
+              child: TextButton(onPressed: (){}, child: Container(
+                width: 60,
+                height: 60,
+                child: Text('Quizer',
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),),
+              ))
           ),
-          Padding(padding: EdgeInsets.only(top:270,left: 100),
-              child: TextButton(onPressed: (){}, child: Text('Plays',
-              style: TextStyle(
-                color: Colors.black45,
-                fontWeight: FontWeight.bold,
-              ),))
+          Padding(padding: EdgeInsets.only(top:275,left: 100),
+              child: Container(
+                child: TextButton(onPressed: (){}, child: Container(
+                  width: 60,
+                  height: 60,
+                  child: Text('Plays',
+                  style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                )),
+              )
           ),
-          Padding(padding: EdgeInsets.only(top:270,left: 180),
-              child: TextButton(onPressed: (){}, child: Text('Players',
-              style: TextStyle(
-                color: Colors.black45,
-                fontWeight: FontWeight.bold,
-              ),))
+          Padding(padding: EdgeInsets.only(top:275,left: 180),
+              child: TextButton(onPressed: (){}, child: Container(
+                width: 70,
+                height: 60,
+                child: Text('Players',
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),),
+              ))
           ),
-          Padding(padding: EdgeInsets.only(top:270,left: 270),
-              child: TextButton(onPressed: (){}, child: Text('Followers',
-              style: TextStyle(
-                color: Colors.black45,
-                fontWeight: FontWeight.bold,
-              ),))
+          Padding(padding: EdgeInsets.only(top:275,left: 270),
+              child: TextButton(onPressed: (){}, child: Container(
+                width: 90,
+                height: 60,
+                child: Text('Followers',
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),),
+              ))
           ),
-          Padding(padding: EdgeInsets.only(top:310,left: 20),
-              child: TextButton(onPressed: (){}, child: Text('30',
+          Padding(padding: EdgeInsets.only(top:320,left: 40),
+              child: Text('30',
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 16
-              ),))
+              ),)
           ),
-          Padding(padding: EdgeInsets.only(top:310,left: 100),
-              child: TextButton(onPressed: (){}, child: Text('90M',
+          Padding(padding: EdgeInsets.only(top:320,left: 120),
+              child: Text('90M',
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 16
-              ),))
+              ),)
           ),
-          Padding(padding: EdgeInsets.only(top:310,left: 185),
-              child: TextButton(onPressed: (){}, child: Text('4B',
+          Padding(padding: EdgeInsets.only(top:320,left: 215),
+              child: Text('4B',
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 16
-              ),))
+              ),)
           ),
-          Padding(padding: EdgeInsets.only(top:310,left: 280),
-              child: TextButton(onPressed: (){}, child: Text('390',
+          Padding(padding: EdgeInsets.only(top:320,left: 310),
+              child: Text('390',
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 16
-              ),))
+              ),)
           ),
           Padding(padding: EdgeInsets.only(top:360,left: 10,right: 10),
           child:TextButton(onPressed: (){},
@@ -131,6 +153,7 @@ class Profile extends StatelessWidget {
             ),
           ))
           ),
+          
         ],
       ),
     );
