@@ -21,9 +21,9 @@ class Profile extends StatelessWidget {
             ),
           ),
           Padding(padding: EdgeInsets.only(top: 40,right: 350,),
-            child: IconButton(onPressed: (){}, icon:Icon(Icons.arrow_back)),),
+            child: IconButton(onPressed: (){}, icon:Icon(Icons.arrow_back,color: Colors.white70)),),
           Padding(padding: EdgeInsets.only(top: 40,left: 350,),
-            child: IconButton(onPressed: (){}, icon:Icon(Icons.send_sharp)),),
+            child: IconButton(onPressed: (){}, icon:Icon(Icons.send_sharp,color: Colors.white70,)),),
             Padding(padding: EdgeInsets.only(top: 110,left: 155),
             child: Container(
               width: 80,
