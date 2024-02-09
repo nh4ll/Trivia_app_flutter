@@ -5,6 +5,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         children: [
@@ -12,6 +13,7 @@ class Profile extends StatelessWidget {
             height: 150,
             width: 400,
             decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/blur-background-design-template-838ec9f1bfdb26eabf22a5b5fa510dad_screen.jpg")),
               color: Colors.black,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(30),
@@ -19,35 +21,38 @@ class Profile extends StatelessWidget {
               ),
             ),
           ),
+          // Padding(
+          //   padding: EdgeInsets.only(
+          //     top: 40,
+          //     right: 350,
+          //   ),
+          //   child: IconButton(
+          //       onPressed: () {},
+          //       icon: Icon(Icons.arrow_back, color: Colors.white70)),
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.only(
+          //     top: 40,
+          //     left: 350,
+          //   ),
+          //   child: IconButton(
+          //       onPressed: () {},
+          //       icon: Icon(
+          //         Icons.send_sharp,
+          //         color: Colors.white70,
+          //       )),
+          // ),
           Padding(
             padding: EdgeInsets.only(
-              top: 40,
-              right: 350,
-            ),
-            child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.arrow_back, color: Colors.white70)),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-              top: 40,
-              left: 350,
-            ),
-            child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.send_sharp,
-                  color: Colors.white70,
-                )),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 110, left: 155),
+                top: screenSize.height * 0.13, left: screenSize.width * 0.4),
             child: Container(
               width: 80,
               height: 80,
               decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage("assets/IMG_20230825_091659_864.jpg")),
                   color: Colors.blueGrey,
-                  borderRadius: BorderRadius.circular(50)),
+                  borderRadius: BorderRadius.circular(50)
+                  ),
             ),
           ),
           Padding(
@@ -57,119 +62,63 @@ class Profile extends StatelessWidget {
               style: TextStyle(color: Colors.black, fontSize: 24),
             ),
           ),
-          Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 230, left: 165),
-                child: Text(
-                  '@sabith',
-                  style: TextStyle(color: Colors.black38, fontSize: 16),
-                ),
-              ),
-            ],
+          Padding(
+            padding: EdgeInsets.only(top: 230, left: 165),
+            child: Text(
+              '@sabith',
+              style: TextStyle(color: Colors.black38, fontSize: 16),
+            ),
           ),
           Padding(
-              padding: EdgeInsets.only(top: 275, left: 10),
-              child: TextButton(
-                  onPressed: () {},
-                  child: Container(
-                    width: 60,
-                    height: 60,
-                    child: Text(
-                      'Quizer',
-                      style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ))),
-          Padding(
-              padding: EdgeInsets.only(top: 275, left: 100),
-              child: Container(
-                child: TextButton(
-                    onPressed: () {},
-                    child: Container(
-                      width: 60,
-                      height: 60,
-                      child: Text(
-                        'Plays',
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    )),
-              )),
-          Padding(
-              padding: EdgeInsets.only(top: 275, left: 180),
-              child: TextButton(
-                  onPressed: () {},
-                  child: Container(
-                    width: 70,
-                    height: 60,
-                    child: Text(
-                      'Players',
-                      style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ))),
-          Padding(
-              padding: EdgeInsets.only(top: 275, left: 270),
-              child: TextButton(
-                  onPressed: () {},
-                  child: Container(
-                    width: 90,
-                    height: 60,
-                    child: Text(
-                      'Followers',
-                      style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ))),
-          Padding(
-              padding: EdgeInsets.only(top: 320, left: 40),
-              child: Text(
-                '30',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16),
-              )),
-          Padding(
-              padding: EdgeInsets.only(top: 320, left: 120),
-              child: Text(
-                '90M',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16),
-              )),
-          Padding(
-              padding: EdgeInsets.only(top: 320, left: 215),
-              child: Text(
-                '4B',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16),
-              )),
-          Padding(
-              padding: EdgeInsets.only(top: 320, left: 310),
-              child: Text(
-                '390',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16),
-              )),
+  padding: const EdgeInsets.only(top: 280,left: 20),
+  child: ListView(
+    scrollDirection: Axis.horizontal,
+    shrinkWrap: true,
+    children: [
+      Container(
+        width: 80,
+        height: 50,
+        child: Text("Quizer\n34",
+        style: TextStyle(
+          fontSize: 18
+        ),),
+      ),
+      Container(
+        width: 80,
+        height: 50,
+        child: Text("Plays\n45M",
+        style: TextStyle(
+          fontSize: 18
+        ),
+        ),
+      ),
+      Container(
+        width: 80,
+        height: 50,
+        child: Text("Rank\n544",
+        style: TextStyle(
+          fontSize: 18
+        ),),
+      ),
+      Container(
+        width: 100,
+        height: 50,
+        child: Text("Followers\n4B",
+        style: TextStyle(
+          fontSize: 18
+        ),),
+      ),
+      Container(
+        width: 80,
+        height: 50,
+        child: Text("Following\n544",
+        style: TextStyle(
+          fontSize: 18
+        ),),
+      ),
+    ],
+  ),
+),
           Padding(
               padding: EdgeInsets.only(top: 360, left: 10, right: 10),
               child: TextButton(
@@ -178,13 +127,12 @@ class Profile extends StatelessWidget {
                     height: 50,
                     width: 400,
                     decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: Color.fromARGB(255, 156, 156, 156),
                         borderRadius: BorderRadius.circular(50)),
                     child: Center(
                       child: Text(
                         'Edit Profile',
                         style: TextStyle(
-                          color: Colors.white,
                           fontSize: 20,
                         ),
                       ),
