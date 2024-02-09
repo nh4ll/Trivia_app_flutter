@@ -13,7 +13,8 @@ class Profile extends StatelessWidget {
             height: 150,
             width: 400,
             decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage("assets/blur-background-design-template-838ec9f1bfdb26eabf22a5b5fa510dad_screen.jpg")),
+              image: DecorationImage(image: AssetImage
+              ("assets/blur-background-design-template-838ec9f1bfdb26eabf22a5b5fa510dad_screen.jpg")),
               color: Colors.black,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(30),
