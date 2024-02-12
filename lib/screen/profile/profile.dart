@@ -46,7 +46,7 @@ class Profile extends StatelessWidget {
           // ),
           Padding(
             padding: EdgeInsets.only(
-                top: screenSize.height * 0.13, left: screenSize.width * 0.4),
+                top: screenSize.height * 0.13, left: screenSize.width * 0.42),
             child: Container(
               width: 80,
               height: 80,
@@ -133,20 +133,21 @@ class Profile extends StatelessWidget {
                     height: 60,
                     width: 450,
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 156, 156, 156),
+                        color: Color.fromARGB(255, 51, 51, 51),
                         borderRadius: BorderRadius.circular(50)),
                     child: Center(
                       child: Text(
                         'Edit Profile',
                         style: TextStyle(
-                          fontSize: 20,
+                          color: Colors.white70,
+                          fontSize: 24,
                         ),
                       ),
                     ),
                   ))),
                   Padding(padding: EdgeInsets.only(
-                top: screenSize.height * 0.55, left: screenSize.width * 0.05),
-                child: Text('Attempts\n34',
+                top: screenSize.height * 0.56, left: screenSize.width * 0.05),
+                child: Text('Attempts',
                 style: TextStyle(fontSize: 20),),
                 ),
         ],
