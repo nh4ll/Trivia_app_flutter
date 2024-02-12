@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trivia_with_flutter/screen/home/bottom_nav_bar.dart';
 import 'package:trivia_with_flutter/screen/nav_home/nav_home_page.dart';
+import 'package:trivia_with_flutter/screen/profile/profile.dart';
 import 'package:trivia_with_flutter/utils/colours/colors.dart';
 import 'package:trivia_with_flutter/utils/providers/navigation/navigatorprovider.dart';
 
@@ -41,10 +42,7 @@ class _HomePageState extends State<HomePage> {
       'Leaderboard',
       style: optionStyle,
     ),
-    Text(
-      'Profile',
-      style: optionStyle,
-    ),
+    const Profile()
   ];
     // final Color textColor =
     // context.read<ThemeProvider>().isLightTheme ? Light.text : Dark.text;
