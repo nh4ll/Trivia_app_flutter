@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:trivia_with_flutter/screen/profile/profile.dart';
 import 'package:trivia_with_flutter/screen/entry/entry_screen.dart';
 import 'package:trivia_with_flutter/utils/providers/navigation/navigatorprovider.dart';
 import 'package:trivia_with_flutter/utils/providers/theme/themeprovider.dart';
+
+import 'screen/profile/profile.dart';
 
 void main() {
   Provider.debugCheckInvalidValueType = null;
@@ -28,7 +31,7 @@ class MainApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: Consumer<ThemeProvider>(
           builder: (context, themeProvider, child) {
-            return const EntryPage();
+            return const Profile();
           },
         ),
       ),
