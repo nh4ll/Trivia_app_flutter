@@ -30,3 +30,7 @@ class Otp {
   static const rememberMe = "Remember Me";
   static const forgotPass = "Forgot Password?";
 }
+class Home {
+  static const quizCraft = "QuizCraft";
+  static const recentFollowers = "Recent Followers";
+}
