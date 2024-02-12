@@ -10,11 +10,12 @@ class Profile extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            height: 150,
-            width: 400,
+            height: screenSize.height*0.17,
+            width: screenSize.width*13,
             decoration: BoxDecoration(
               image: DecorationImage(image: AssetImage
-              ("assets/blur-background-design-template-838ec9f1bfdb26eabf22a5b5fa510dad_screen.jpg")),
+              ("assets/blur-background-design-template-838ec9f1bfdb26eabf22a5b5fa510dad_screen.jpg"),
+              fit: BoxFit.fitWidth),
               color: Colors.black,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(30),
@@ -57,21 +58,24 @@ class Profile extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 200, left: 160),
+            padding: EdgeInsets.only(
+                top: screenSize.height * 0.25, left: screenSize.width * 0.42),
             child: Text(
               'sabith',
               style: TextStyle(color: Colors.black, fontSize: 24),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 230, left: 165),
+            padding: EdgeInsets.only(
+                top: screenSize.height * 0.30, left: screenSize.width * 0.42),
             child: Text(
               '@sabith',
               style: TextStyle(color: Colors.black38, fontSize: 16),
             ),
           ),
           Padding(
-  padding: const EdgeInsets.only(top: 280,left: 20),
+  padding: EdgeInsets.only(
+                top: screenSize.height * 0.36, left: screenSize.width * 0.05),
   child: ListView(
     scrollDirection: Axis.horizontal,
     shrinkWrap: true,
@@ -121,12 +125,13 @@ class Profile extends StatelessWidget {
   ),
 ),
           Padding(
-              padding: EdgeInsets.only(top: 360, left: 10, right: 10),
+              padding: EdgeInsets.only(
+                top: screenSize.height * 0.45, left: screenSize.width * 0.0),
               child: TextButton(
                   onPressed: () {},
                   child: Container(
-                    height: 50,
-                    width: 400,
+                    height: 60,
+                    width: 450,
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 156, 156, 156),
                         borderRadius: BorderRadius.circular(50)),
@@ -139,6 +144,11 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                   ))),
+                  Padding(padding: EdgeInsets.only(
+                top: screenSize.height * 0.55, left: screenSize.width * 0.05),
+                child: Text('Attempts\n34',
+                style: TextStyle(fontSize: 20),),
+                ),
         ],
       ),
     );
