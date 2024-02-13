@@ -11,7 +11,7 @@ AppBar buildHomeAppBar(BuildContext context) {
         ? Light.background
         : Dark.background,
     elevation: 0.0,
-    titleSpacing: 12.0,
+    titleSpacing: 10,
     toolbarHeight: screenSize.height * .08,
     leading: Center(
       child: Text("QuizCraft",style: TextStyle(
@@ -20,7 +20,7 @@ AppBar buildHomeAppBar(BuildContext context) {
         fontSize: 30,
       ),),
     ),
-    leadingWidth: screenSize.width * 0.35,
+    leadingWidth: 170,
     actions: [
       IconButton(
           onPressed: () {

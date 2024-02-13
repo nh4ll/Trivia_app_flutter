@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trivia_with_flutter/utils/providers/theme/themeprovider.dart';
+import 'package:trivia_with_flutter/utils/strings/strings.dart';
 
 import '../../utils/colours/colors.dart';
 
@@ -49,7 +50,7 @@ class _NavHomePageState extends State<NavHomePage> {
               Padding(
                 padding: const EdgeInsets.only(left: 10.0, bottom: 10),
                 child: Text(
-                  "Followers",
+                  Home.recentFollowers,
                   style: textStyle,
                 ),
               ),
