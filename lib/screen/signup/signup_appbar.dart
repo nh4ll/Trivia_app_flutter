@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+// ignore: unused_import
 import 'package:trivia_with_flutter/main.dart';
 import 'package:trivia_with_flutter/utils/colours/colors.dart';
 import 'package:trivia_with_flutter/utils/providers/theme/themeprovider.dart';
