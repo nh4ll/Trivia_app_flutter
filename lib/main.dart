@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_with_flutter/screen/selectionpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
       ),
-      home: Scaffold(
-        
-      ),
+      home: SelectionPage()
     );
   }
 }
